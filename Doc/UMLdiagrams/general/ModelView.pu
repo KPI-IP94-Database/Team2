@@ -15,19 +15,19 @@ actor "Адміністратор" as Admin
 ' UCes for Guest:
 usecase "<b>UC_1</b>\nРеєстрація" as UC1_Guest
 usecase "<b>UC_2</b>\nПерегляд вмісту" as UC2_Guest
+usecase "<b>UC_3</b>\nАвторизація" as UC3_Guest
+
 
 
 ' UCes for User:
 usecase "<b>UC_1</b>\nДодавання або віднімання\nтовару" as UC1_User
-usecase "<b>UC_2</b>\nОбробка заявок\nна дзвінки" as UC2_User
-usecase "<b>UC_3</b>\nВідстежування місцерозташування\nтовару" as UC3_User
-usecase "<b>UC_4</b>\nЗв'язок з адміністратором" as UC4_User
+usecase "<b>UC_2</b>\nВідстежування місцерозташування\nтовару" as UC2_User
+usecase "<b>UC_3</b>\nЗв'язок з адміністратором" as UC3_User
 
 
 ' UCes for Admin:
 usecase "<b>UC_1</b>\nОбробка звернень користувача" as UC1_Admin
 usecase "<b>UC_2</b>\nМаніпуляції з правами\nдоступу користувачів" as UC2_Admin
-usecase "<b>UC_3</b>\nМожливість "відігравати роль" користувача" as UC3_Admin
 
 
 ' Actors connections
@@ -39,17 +39,17 @@ Admin -u--|> User
 ' UCes connectios
 Guest -u-> UC1_Guest
 Guest -u-> UC2_Guest
+Guest -u-> UC3_Guest
+
 
 
 User -u-> UC1_User
 User -u-> UC2_User
-User -d--> UC3_User
-User -d--> UC4_User
+User -u--> UC3_User
 
 
 Admin -d--> UC1_Admin
 Admin -d-> UC2_Admin
-Admin -d-> UC3_Admin
 
 
 right footer
