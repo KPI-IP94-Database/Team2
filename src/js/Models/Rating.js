@@ -1,11 +1,8 @@
 'use strict';
 
-module.exports = Product;
-
-
 const db = require('../StoreDB.module');
 
-class Product {
+class Rating {
   constructor(value, user_name, product_name) {
     this.value = value;
     this.user_name = user_name;
@@ -32,3 +29,4 @@ class Product {
 
   static delete = conditions => db.delete('rating', conditions);
 }
+module.exports = Rating;
