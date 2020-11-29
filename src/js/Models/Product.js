@@ -2,7 +2,6 @@
 
 module.exports = Product;
 
-
 const db = require('../StoreDB.module');
 
 class Product {
@@ -33,4 +32,3 @@ class Product {
   static delete = conditions => db.delete('product', conditions);
 }
 
-module.exports = Rating;
