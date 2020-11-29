@@ -6,7 +6,6 @@ CREATE TABLE Product (
   name          varchar(50) 	PRIMARY KEY,
   description   varchar(50) 	NOT NULL,
   price         integer 		  NOT NULL,
-  user_name 		varchar(50) 	NOT NULL
   );
 
 CREATE TABLE User (
