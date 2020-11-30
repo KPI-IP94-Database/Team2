@@ -27,7 +27,7 @@ CREATE TABLE Rating(
 
 CREATE TABLE Comment(
   id 			      integer 		  AUTO_INCREMENT PRIMARY KEY,
-  content 		  text,
+  content 		  text          NOT_NULL,
   user_login 	  varchar(50)   NOT NULL,
   product_name  varchar(50)	  NOT NULL,
   FOREIGN KEY(product_name)   REFERENCES Product(name)  ON DELETE CASCADE,
