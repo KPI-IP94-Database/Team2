@@ -5,8 +5,6 @@ const db = require('../src/js/StoreDB.module');
 const { hashPassword, validatePassword } = require('../src/js/security');
 const assert = require('assert').strict;
 
-const TEST_TIMEOUT = 3000;
-
 module.exports = next => {
   console.log('User test started');
   (async () => {

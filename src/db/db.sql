@@ -22,14 +22,14 @@ CREATE TABLE Rating(
   user_login 	  varchar(50)   NOT NULL,
   product_name  varchar(50)   NOT NULL,
   FOREIGN KEY(product_name)   REFERENCES Product(name)  ON DELETE CASCADE,
-  FOREIGN KEY(user_login)     REFERENCES User(login)     ON DELETE CASCADE
+  FOREIGN KEY(user_login)     REFERENCES User(login)    ON DELETE CASCADE
   );
 
 CREATE TABLE Comment(
   id 			      integer 		  AUTO_INCREMENT PRIMARY KEY,
-  content 		  text          NOT_NULL,
+  content 		  text          NOT NULL,
   user_login 	  varchar(50)   NOT NULL,
   product_name  varchar(50)	  NOT NULL,
   FOREIGN KEY(product_name)   REFERENCES Product(name)  ON DELETE CASCADE,
-  FOREIGN KEY(user_login)     REFERENCES User(login)     ON DELETE CASCADE
+  FOREIGN KEY(user_login)     REFERENCES User(login)    ON DELETE CASCADE
   );

@@ -18,10 +18,9 @@ class Product {
     await db.insert('product', newProduct);
   };
 
-  static Find = async conditions =>
-    await db.select('product', ['*'], conditions);
+  static Find = conditions => db.select('product', ['*'], conditions);
 
-  static All = async () => await db.select('product', ['*']);
+  static All = () => db.select('product', ['*']);
 
   static Update = (product, conditions) => {
     db.update('product', product, conditions);

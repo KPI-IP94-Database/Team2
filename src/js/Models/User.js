@@ -20,9 +20,9 @@ class User {
     await db.insert('user', newUser);
   };
 
-  static Find = async login => await db.select('user', ['*'], { login });
+  static Find = login => db.select('user', ['*'], { login });
 
-  static All = async () => await db.select('user', ['*']);
+  static All = () => db.select('user', ['*']);
 
   static Update = user => {
     db.update('user', user, { login: user.login });

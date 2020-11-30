@@ -18,10 +18,9 @@ class Rating {
     await db.insert('rating', newRating);
   };
 
-  static Find = async conditions =>
-    await db.select('rating', ['*'], conditions);
+  static Find = conditions => db.select('rating', ['*'], conditions);
 
-  static All = async () => await db.select('rating', ['*']);
+  static All = () => db.select('rating', ['*']);
 
   static Update = (rating, conditions) => {
     db.update('rating', rating, conditions);
