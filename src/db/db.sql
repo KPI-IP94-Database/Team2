@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS store;
+
 CREATE DATABASE store;
 
 USE store;
@@ -17,17 +19,17 @@ CREATE TABLE User(
 CREATE TABLE Rating(
   id		      	integer 		  AUTO_INCREMENT PRIMARY KEY,
   value 		    integer 		  NOT NULL,
-  user_name 	  varchar(50)   NOT NULL,
+  user_login 	  varchar(50)   NOT NULL,
   product_name  varchar(50)   NOT NULL,
   FOREIGN KEY(product_name)   REFERENCES Product(name)  ON DELETE CASCADE,
-  FOREIGN KEY(user_name)      REFERENCES User(login)     ON DELETE CASCADE
+  FOREIGN KEY(user_login)     REFERENCES User(login)     ON DELETE CASCADE
   );
 
 CREATE TABLE Comment(
   id 			      integer 		  AUTO_INCREMENT PRIMARY KEY,
   content 		  text,
-  user_name 	  varchar(50)   NOT NULL,
+  user_login 	  varchar(50)   NOT NULL,
   product_name  varchar(50)	  NOT NULL,
   FOREIGN KEY(product_name)   REFERENCES Product(name)  ON DELETE CASCADE,
-  FOREIGN KEY(user_name)      REFERENCES User(login)     ON DELETE CASCADE
+  FOREIGN KEY(user_login)     REFERENCES User(login)     ON DELETE CASCADE
   );

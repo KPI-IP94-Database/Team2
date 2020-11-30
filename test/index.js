@@ -1,3 +1,3 @@
 'use strict';
 
-require('./user');
+require('./user')(() => require('./product')(() => require('./rating')()));

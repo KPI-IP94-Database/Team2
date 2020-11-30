@@ -16,7 +16,7 @@ class User {
       password: this.password,
     };
     const [user] = await db.select('user', ['*'], { login: newUser.login });
-    if (user) return this.Update(user);
+    if (user) return User.Update(user);
     await db.insert('user', newUser);
   };
 
@@ -24,11 +24,11 @@ class User {
 
   static All = async () => await db.select('user', ['*']);
 
-  static Update = async user => {
-    await db.update('user', user, { login: user.login });
+  static Update = user => {
+    db.update('user', user, { login: user.login });
   };
 
-  static Delete = async conditions => await db.delete('user', conditions);
+  static Delete = conditions => db.delete('user', conditions);
 }
 
 module.exports = User;

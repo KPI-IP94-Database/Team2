@@ -1,7 +1,5 @@
 'use strict';
 
-module.exports = Product;
-
 const db = require('../StoreDB.module');
 
 class Product {
@@ -17,7 +15,7 @@ class Product {
       description: this.description,
       price: this.price,
     };
-    db.insert('product', newProduct);
+    await db.insert('product', newProduct);
   };
 
   static Find = async conditions =>
@@ -31,3 +29,5 @@ class Product {
 
   static Delete = conditions => db.delete('product', conditions);
 }
+
+module.exports = Product;
