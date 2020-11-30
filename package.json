@@ -1,0 +1,24 @@
+{
+  "name": "clothing_store",
+  "version": "1.0.0",
+  "description": "This organization consists of students of the IP-94 (FICT KPI) group. Theme of our project is a `Clothing Store`, which is connected to a database.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KPI-IP94-Database/Team2.git"
+  },
+  "keywords": [],
+  "author": "Team2_IP94",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KPI-IP94-Database/Team2/issues"
+  },
+  "homepage": "https://github.com/KPI-IP94-Database/Team2#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

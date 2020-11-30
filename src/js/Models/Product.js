@@ -29,6 +29,5 @@ class Product {
     db.update('product', product, conditions);
   };
 
-  static delete = conditions => db.delete('product', conditions);
+  static Delete = conditions => db.delete('product', conditions);
 }
-

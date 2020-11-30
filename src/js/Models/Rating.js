@@ -27,6 +27,6 @@ class Rating {
     db.update('rating', rating, conditions);
   };
 
-  static delete = conditions => db.delete('rating', conditions);
+  static Delete = conditions => db.delete('rating', conditions);
 }
 module.exports = Rating;
