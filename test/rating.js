@@ -11,24 +11,41 @@ module.exports = next => {
   console.log('Rating test started');
   (async () => {
     const password = await hashPassword('123456hello');
-    const user = new User('testUser', 'test@gmail.com', password);
+    const user = new User({
+      name: 'testUser',
+      login: 'test@gmail.com',
+      password,
+    });
     await user.save();
-    const product = new Product('Shirt', 'First product', 15);
+    const product = new Product({
+      name: 'Shirt',
+      description: 'First product',
+      price: 15,
+    });
     await product.save();
-    const rating = new Rating(8, 'test@gmail.com', 'Shirt');
+    const rating = new Rating({
+      value: 8,
+      user_login: 'test@gmail.com',
+      product_name: 'Shirt',
+    });
     await rating.save();
     const ratings = await Rating.All();
     assert.ok(ratings.length);
-    await Rating.Update(
-      {
-        value: 6,
-      },
-      { user_login: 'test@gmail.com' }
-    );
+    await new Rating({
+      id: ratings[0].id,
+      value: 6,
+    }).save();
     const theSameRating = await Rating.Find({ user_login: 'test@gmail.com' });
     assert.ok(theSameRating.length);
     assert.equal(theSameRating[0].value, 6);
-    const userForThisRating = await User.Find(theSameRating[0].user_login);
+    const userForThisRating = await User.Find({
+      login: theSameRating[0].user_login,
+    });
+    assert.equal(userForThisRating[0].ratings[0].value, 6);
+    const productForThisRating = await Product.Find({
+      name: theSameRating[0].product_name,
+    });
+    assert.equal(productForThisRating[0].ratings[0].value, 6);
     const shouldBeEqual = await validatePassword(
       '123456hello',
       userForThisRating[0].password

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "init": "mysql -u user -p < ./src/db/db.sql",
+    "initDb": "mysql -u user -p < ./src/db/db.sql",
     "test": "node ./test",
     "mock": "mysql -u user -p < ./src/db/mock.sql"
   },
