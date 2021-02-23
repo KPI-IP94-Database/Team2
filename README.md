@@ -12,7 +12,7 @@ This organization consists of students of the IP-94 (FICT KPI) group. Theme of o
 - [Bespaliy Illya](https://github.com/Bespaliy)
 - [Vova](https://github.com/GITjoint)
 - [Sasha Holovenko](https://github.com/sashaholovenko)
-
+- [Nikita Lazarenko](https://github.com/UniversalCorn)
 
 
 
