@@ -2,7 +2,7 @@
 This organization consists of students of the IP-94 (FICT KPI) group. Theme of our project is a `Clothing Store`, which is connected to a database.
 
 ## Technology Stack:
-- Client: Node.js
+- Client: Web-browser
 - Database: MySQL
 
 ## Members:
