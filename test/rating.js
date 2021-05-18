@@ -43,7 +43,7 @@ module.exports = next => {
     });
     assert.equal(userForThisRating[0].ratings[0].value, 6);
     const productForThisRating = await Product.Find({
-      name: theSameRating[0].product_name,
+      name: theSameRating[0].product_name
     });
     assert.equal(productForThisRating[0].ratings[0].value, 6);
     const shouldBeEqual = await validatePassword(
