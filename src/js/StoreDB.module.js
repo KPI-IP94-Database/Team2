@@ -46,10 +46,10 @@ const updates = delta => {
 class Database {
   constructor(config) {
     this.pool = mysql.createConnection(config);
-    this.start();
+    // this.start();
   }
 
-  start() {
+  static start() {
     this.pool.connect(err => {
       if (err) throw err;
       console.log('DB connected...');

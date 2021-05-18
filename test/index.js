@@ -1,5 +1,5 @@
 'use strict';
 
-require('./user')(() =>
+require('./User')(() =>
   require('./product')(() => require('./rating')(() => require('./comment')()))
 );

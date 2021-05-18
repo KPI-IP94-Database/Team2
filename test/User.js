@@ -1,7 +1,6 @@
 'use strict';
 
 const User = require('../src/js/Models/User');
-const db = require('../src/js/StoreDB.module');
 const { hashPassword, validatePassword } = require('../src/js/security');
 const assert = require('assert').strict;
 
