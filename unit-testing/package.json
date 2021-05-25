@@ -1,0 +1,20 @@
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "Jest item-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jest",
+    "javascipt",
+    "testing",
+    "unit-testing"
+  ],
+  "author": "Olexandr <sasha155s49@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
